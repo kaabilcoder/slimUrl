@@ -11,7 +11,7 @@ const UrlSchema = new Schema({
     shortID: {type: String, require: true, unique: true},
     redirectURL: {type: String, require: true},
     visitHistory: [{timestamp: {type: Number}}],
-    createdAt: { type: Date, default: Date.now, index: { expires: '1d' } } // TTL - time to live index setup for 1 day
+    createdAt: { type: Date, default: Date.now, index: { expires: 86400 } } // TTL - time to live index setup for 1 day
 },
 {timestamps: true})
 
