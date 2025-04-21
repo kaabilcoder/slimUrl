@@ -5,7 +5,9 @@ import shortid from 'shortid'
 export const handleGenerateShortUrl: any = async (req: Request, res: Response) => {
     const body = req.body;
     if(!body) return res.status(400).json({error: 'url is required'})
-    const shortId = shortid.generate();
+    const shortId = body.customString && body.customString.trim() !== '' 
+        ? body.customString 
+        : shortid.generate();
 
     await UrlModel.create({
         shortID: shortId,
