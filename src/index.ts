@@ -14,7 +14,7 @@ app.set("views", path.join(process.cwd(), "src", "views"));
 app.use('/url', urlRoute)
 app.get('/url/:shortId', handleRedirectUrl)
 
-app.get("/home", async (req, res) => {
+app.get("/", async (req, res) => {
     const allUrl = await UrlModel.find({});
     return res.render('home',{
         urls: allUrl
