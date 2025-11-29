@@ -25,10 +25,8 @@
   - [Prerequisites](#prerequisites)
   - [Local Installation](#local-installation)
   - [Docker Installation](#-docker-installation)
-- [Configuration](#-configuration)
 - [Usage](#-usage)
 - [Deployment](#-deployment)
-- [API Documentation](#-api-documentation)
 - [Contributing](#-contributing)
 - [License](#-license)
 
