@@ -52,14 +52,17 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            echo 'MONGODB_URI=${{ secrets.MONGODB_URI }}' > .env
+
             docker pull kaabilcoder/slimurl-fullstack:latest
             docker stop slimurl || true
             docker rm slimurl || true
+
             docker run -d \
              --name slimurl \
              --restart unless-stopped \
              -p 8000:8000 \
-             -e "MONGODB_URI=${{ secrets.MONGODB_URI }}" \
+             --env-file .env \
              -e DB_NAME=urlShortner \
              -e PORT=8000 \
               kaabilcoder/slimurl-fullstack:latest
