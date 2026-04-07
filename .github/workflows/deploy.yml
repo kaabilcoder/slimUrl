@@ -63,6 +63,5 @@ jobs:
              --restart unless-stopped \
              -p 8000:8000 \
              --env-file .env \
-             -e DB_NAME=urlShortner \
              -e PORT=8000 \
               kaabilcoder/slimurl-fullstack:latest
